@@ -32,7 +32,7 @@ class CacherServiceProvider extends ServiceProvider
     {
         $this->app->singleton(BladeDirective::class, function () {
             return new BladeDirective(
-                new RussianChaching(app('cache.store'))
+                new RussianCaching(app('cache.store'))
             );
         });
     }
