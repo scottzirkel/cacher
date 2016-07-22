@@ -31,7 +31,9 @@ class CacherServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton(BladeDirective::class, function () {
-            return new BladeDirective();
+            return new BladeDirective(
+                new RussianChaching(app('cache.store'))
+            );
         });
     }
 }
