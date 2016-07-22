@@ -1,5 +1,5 @@
 {
-    "name": "scott/cacher-the-friendly-cache",
+    "name": "scottzirkel/cacher-the-friendly-cache",
     "description": "Russian Doll Caching for Laravel from the [Laracasts tutorial](https://laracasts.com/series/russian-doll-caching-in-laravel)",
     "license": "MIT",
     "keywords": ["laravel", "cache"],
