@@ -15,7 +15,15 @@
     },
     "autoload": {
       "psr-4": {
-        "SZ\\Cacher\\": "src/"
+        "Cacher\\": "src/"
       }
+    },
+    "autoload-dev": {
+      "classmap": ["tests/TestCase.php"]
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.4",
+        "illuminate/database": "^5.2",
+        "illuminate/cache": "^5.2"
     }
 }

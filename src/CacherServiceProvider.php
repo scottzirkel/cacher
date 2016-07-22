@@ -1,6 +1,6 @@
 <?php
 
-namespace SZ\Cacher;
+namespace Cacher;
 
 use Blade;
 use Illuminate\Support\ServiceProvider;
@@ -15,11 +15,11 @@ class CacherServiceProvider extends ServiceProvider
     public function boot()
     {
         Blade::directive('cache', function($expression) {
-            return "<?php if (! SZ\Cacher\RussianCaching::setUp{$expression} ) { ?>";
+            return "<?php if (! app('Cacher\BladeDirective')->setUp{$expression} ) { ?>";
         });
 
         Blade::directive('endcache', function() {
-            return "<?php } echo SZ\Cacher\RussianCaching::tearDown() ?>";
+            return "<?php } echo app('Cacher\BladeDirective')->tearDown() ?>";
         });
     }
 
@@ -30,6 +30,8 @@ class CacherServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton(BladeDirective::class, function () {
+            return new BladeDirective();
+        });
     }
 }

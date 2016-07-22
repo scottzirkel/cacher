@@ -1,6 +1,6 @@
 <?php
 
-namespace SZ\Cacher;
+namespace Cacher;
 
 trait Cacheable
 {
